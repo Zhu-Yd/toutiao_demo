@@ -105,6 +105,7 @@ export default {
     },
     clickResFn: function (item) {
       console.log(item)
+      this.$router.push({ name: 'article_desc', params: { articleId: item.id } })
     }
   }
 }

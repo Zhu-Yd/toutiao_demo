@@ -1,6 +1,8 @@
 import Mock from 'mockjs'
 import qs from 'qs'
 
+Mock.XHR.prototype.withCredentials = true // 加上这句即可
+
 // 获取搜索推荐
 Mock.mock(/\/user\/recommend/, 'get', config => {
   // console.log(config)

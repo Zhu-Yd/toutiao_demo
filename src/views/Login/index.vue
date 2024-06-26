@@ -69,7 +69,7 @@ export default {
       })
       try {
         const result = await login(this.user)
-        if (result.status === 0) {
+        if (result.status === 0 || result.status === 200) {
           this.$store.commit('setUser', result.token)
           this.$toast.success('登录成功')
           this.$router.push('/layout')

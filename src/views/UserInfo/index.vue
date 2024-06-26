@@ -5,7 +5,7 @@
         <van-icon name="ellipsis"></van-icon>
       </template>
     </van-nav-bar>
-    <input type="file" hidden ref="file" @change="onFileChange">
+    <input type="file" hidden ref="file" accept="image/*" @change="onFileChange">
     <div class="user-info">
       <van-cell title="头像" value="内容" is-link @click="$refs.file.click()">
         <van-image

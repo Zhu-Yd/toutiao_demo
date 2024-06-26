@@ -1,11 +1,12 @@
 import axios from 'axios'
 import store from '@/store'
 import router from '@/router'
-const request = axios.create({
-  // baseURL: 'http://192.168.1.66:8000'
-  // baseURL: 'http://127.0.0.1:3007'
-  baseURL: 'http://192.168.1.2:3007'
 
+const request = axios.create({
+  // baseURL: 'http://192.168.1.66:8080'
+  baseURL: 'https://192.168.1.2',
+  // baseURL: 'http://127.0.0.1:3007',
+  withCredentials: true
 })
 
 // 请求拦截器

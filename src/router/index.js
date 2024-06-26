@@ -29,6 +29,7 @@ const routes = [
   },
   {
     path: '/article/:articleId',
+    name: 'article_desc',
     component: () => import('@/views/Articles'),
     props: true
   },
