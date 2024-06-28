@@ -42,10 +42,10 @@ export default {
   methods: {
     onSearch: async function (value) {
       // this.$toast('搜索')
-      this.contentType = 3
       const { data } = await searchArticles({ keys: value })
       this.searchResult = data.result
       await addUserHistory({ keys: value })
+      this.contentType = 3 // 最后更改状态 防止无内容画面提前加载
     },
     onCancel: function () {
       // this.$toast('取消')
@@ -53,6 +53,7 @@ export default {
     },
     clickHistoryItem: function (keys) {
       this.searchValue = keys
+      this.onSearch(this.searchValue)
     },
     onInput: _.debounce(async function (value) {
       if (this.searchValue.trim()) {
